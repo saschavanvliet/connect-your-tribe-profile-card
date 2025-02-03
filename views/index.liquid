@@ -31,20 +31,15 @@
 <img src="{{ person.avatar }}" >
 
       <dl>
-        <dt>HTML</dt>
-        <dd>📗📗📗</dd>
+        <dd>{{ person.nickname }}</dd>
         
-        <dt>CSS</dt>
-        <dd>📗📗📗</dd>
+        <dd>{{ person.birthdate }}</dd>
         
-        <dt>JavaScript</dt>
-        <dd>📗</dd>
+        <dd>{{ person.github_handle }}</dd>
       </dl>
   
-      <p>Welkom! <br> Ik ga proberen mijzelf om te toveren in een geweldige frontender!</p>
+      <p>{{ person.bio }}</p>
       
     </article>
-
-  
 
 {% render 'partials/foot.liquid' %}
