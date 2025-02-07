@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oefenen</title>
+  </head>
+  <body>
+  
+<h1>Data-Driven Web</h1>
+
+<p>Ik ben dus {{ person.name }}</p>
+
+<p>Het is vandaag {{ 'now' | date: "%d-%m-%Y-%H:%M:%S" }}</p>
+
+<p>Ik ben geboren op {{ person.birthdate | date: "%d-%m-%Y" }}</p>
+
+<p>Dat is uitgeschreven: {{ person.birthdate | date: '%d%q of %b %Y at %I:%M %P %Z', "Europe/Amsterdam"}}
+
+<p>Wat is mijn haarkleur? {{ person.custom.haircolor }}
+<p>Wat is mijn favoriete nummer? {{ person.custom.fav_song }}
+
+
+<style>
+body {
+    background: {{ person.custom.fav_color }};
+}
+</style>
+</body>
+
+<details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>

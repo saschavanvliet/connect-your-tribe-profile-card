@@ -1,45 +1,29 @@
 {% render 'partials/head.liquid' %}
 
-    <article>
+<article>
       
-      <header>
-        
-        <h1>{{ person.name }}</h1>
-        
-        <p><em>Creatieve Frontend Developer in spé</em></p>
-        
-        <button>
-          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <title>Wijzig layout</title>
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
-            <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
-            <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
-            <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
-          </svg>
-          <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M15 19v-2a2 2 0 0 1 2 -2h2"></path>
-            <path d="M15 5v2a2 2 0 0 0 2 2h2"></path>
-            <path d="M5 15h2a2 2 0 0 1 2 2v2"></path>
-            <path d="M5 9h2a2 2 0 0 0 2 -2v-2"></path>
-          </svg>
-        </button>
-        
-      </header>
-  
-<img src="{{ person.avatar }}" >
+    <header>  
+      <h1>{{ person.name }}</h1>      
+      <p><em>Creatieve Frontend Developer in spé</em></p>   
+    </header>
 
-      <dl>
-        <dd>{{ person.nickname }}</dd>
-        
-        <dd>{{ person.birthdate }}</dd>
-        
-        <dd>{{ person.github_handle }}</dd>
-      </dl>
+<img src="{{ person.avatar }}" >
+<dl>
+  <dd><strong>Bijnaam:</strong> {{ person.nickname }}</dd>
+  <dd><strong>Geboortedatum:</strong> {{ person.birthdate | date: "%d-%m-%Y"}}</dd>
+  <dd><strong>Haarkleur:</strong> {{ person.custom.haircolor }}</dd>
+  <dd><strong>Favoriet nummer:</strong> {{ person.custom.fav_song }}</dd>
+  <dd><strong>GitHub:</strong> <a href="{{ person.website }}" target="_blank">{{ person.github_handle }}</a></dd>
+</dl>
+<p>{{ person.bio }}</p>
+    
+  </article>
+<p class="hidden-text">Lord of The Rings <br> is <br> THE BEST</p>
   
-      <p>{{ person.bio }}</p>
-      
-    </article>
+<style>
+body {
+    background: {{ person.custom.fav_color }};
+}
+</style>
 
 {% render 'partials/foot.liquid' %}
