@@ -1,13 +1,13 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-      
+<article>      
     <header>  
       <h1>{{ person.name }}</h1>      
       <p><em>Creatieve Frontend Developer in spé</em></p>   
     </header>
 
-<img src="{{ person.avatar }}" >
+<img src="{{ person.avatar }}" alt="{{ person.name }}">
+
 <dl>
   <dd><strong>Bijnaam:</strong> {{ person.nickname }}</dd>
   <dd><strong>Geboortedatum:</strong> {{ person.birthdate | date: "%d-%m-%Y"}}</dd>
@@ -15,6 +15,7 @@
   <dd><strong>Favoriet nummer:</strong> {{ person.custom.fav_song }}</dd>
   <dd><strong>GitHub:</strong> <a href="{{ person.website }}" target="_blank">{{ person.github_handle }}</a></dd>
 </dl>
+
 <p>{{ person.bio }}</p>
     
   </article>

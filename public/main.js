@@ -1,4 +1,3 @@
-
 document.body.addEventListener('click', function() {
   this.classList.toggle('rotated');
 });
@@ -26,7 +25,7 @@ document.addEventListener('click', function(event) {
   document.addEventListener('click', function(event) {
     const hartje = document.createElement('div');
     hartje.classList.add('hartje');
-    hartje.innerHTML = '❤️';
+    hartje.innerHTML = '❤️ Lord of the Rings';
   
     // Zet het hartje op de klikpositie
     hartje.style.left = `${event.clientX}px`;
@@ -39,4 +38,3 @@ document.addEventListener('click', function(event) {
       hartje.remove();
     }, 1000);
   });
-      
