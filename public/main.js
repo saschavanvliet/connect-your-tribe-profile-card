@@ -3,14 +3,14 @@ document.body.addEventListener('click', function() {
 });
 
 document.addEventListener('click', function(event) {
-    // Selecteer het element waar je de tekst wilt tonen
-    const tekst = document.querySelector('.hidden-text');
-    
-    // Als de gebruiker ergens anders klikt dan de tekst, zorg ervoor dat de tekst zichtbaar wordt
-    if (!tekst.contains(event.target) && event.target.className !== 'clickable-element') {
-      tekst.style.display = (tekst.style.display === 'none' || tekst.style.display === '') ? 'block' : 'none';
-    }
-  });
+  const textHidden = document.querySelector('.hidden-text');
+  const isClickable = event.target.classList.contains('clickable-element');
+
+  if (!textHidden.contains(event.target) && !isClickable) {
+      textHidden.style.display = textHidden.style.display === 'block' ? 'none' : 'block';
+  }
+});
+
 
   document.addEventListener('click', function(event) {
     // Selecteer het element waar je de tekst wilt tonen
