@@ -9,11 +9,11 @@
 <img src="{{ person.avatar }}" alt="{{ person.name }}">
 
 <dl>
-  <dd><strong>Bijnaam:</strong> {{ person.nickname }}</dd>
-  <dd><strong>Geboortedatum:</strong> {{ person.birthdate | date: "%d-%m-%Y"}}</dd>
-  <dd><strong>Haarkleur:</strong> {{ person.custom.haircolor }}</dd>
-  <dd><strong>Favoriet nummer:</strong> {{ person.custom.fav_song }}</dd>
-  <dd><strong>GitHub:</strong> <a href="{{ person.website }}" target="_blank">{{ person.github_handle }}</a></dd>
+  <dt>Bijnaam:</dt><dd>{{ person.nickname }}</dd>
+  <dt>Geboortedatum:</dt><dd> {{ person.birthdate | date: "%d-%m-%Y"}}</dd>
+  <dt>Haarkleur:</dt><dd> {{ person.custom.haircolor }}</dd>
+  <dt>Favoriet nummer:</dt><dd> {{ person.custom.fav_song }}</dd>
+  <dt>GitHub:</dt><dd><a href="{{ person.website }}" target="_blank">{{ person.github_handle }}</a></dd>
 </dl>
 
 <p>{{ person.bio }}</p>
